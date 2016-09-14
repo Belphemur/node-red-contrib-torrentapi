@@ -1,0 +1,29 @@
+<script type="text/javascript">
+    RED.nodes.registerType('torrentapi',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            search: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "cloudfare.png",
+        label: function() {
+            return "Torrent Api " + this.search;
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="torrentapi">
+    <div class="form-row">
+        <label for="node-input-search"><i class="icon-tag"></i> Search</label>
+        <input type="text" id="node-input-search" placeholder="SouthPark">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="torrentapi">
+    <p>Retrieve torrent information of <a href="https://torrentapi.org/apidocs_v2.txt">torrentapi</a></p>
+    <p><code>[ { filename: 'Conan.2016.09.13.Billy.Gardell.720p.HDTV.x264-CROOKS[rartv]',
+    category: 'TV HD Episodes',
+    download: 'magnet:?xt=urn:btih:1843a7bfec33ce503123aa3f8579b0a47051062f&dn=Conan.2016.09.13.Billy.Gardell.720p.HDTV.x264-CROOKS%5Brartv%5D&tr=http%3A%2F%2Ftracker.trackerfix.com%3A80%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2710&tr=udp%3A%2F%2F9.rarbg.to%3A2710&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce' }]</code></p>
+</script>

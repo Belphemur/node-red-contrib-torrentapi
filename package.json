@@ -1,0 +1,24 @@
+{
+  "name": "nodered-contrib-torrentapi",
+  "version": "0.0.4",
+  "description": "Do request on torrentapi",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Belphemur/nodered-contrib-torrentapi"
+  },
+  "keywords": [
+    "torrent",
+    "node-red"
+  ],
+  "author": "Antoine Aflalo <antoineaf+npm@admincmd.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/Belphemur/nodered-contrib-torrentapi",
+  "dependencies": {
+    "torrentapi": "1.0.x"
+  },
+  "node-red": {
+    "nodes": {
+      "torrentapi": "torrentapi.js"
+    }
+  }
+}
