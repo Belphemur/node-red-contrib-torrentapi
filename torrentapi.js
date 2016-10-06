@@ -18,7 +18,8 @@ module.exports = function (RED) {
             }
             var params = {
                 search_string: search,
-                sort: "seeders"
+                sort: "seeders",
+                ranked: 0
             };
             if (msg.category) {
                 params.category = msg.category;
