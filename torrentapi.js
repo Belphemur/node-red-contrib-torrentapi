@@ -1,7 +1,7 @@
 /**
  * Created by aaflalo on 14/09/16.
  */
-import TorrentSearchApi from 'torrent-search-api'
+const TorrentSearchApi = require('torrent-search-api');
 
 const torrentSearch = new TorrentSearchApi();
 torrentSearch.enableProvider('Rarbg');
