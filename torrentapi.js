@@ -2,11 +2,11 @@
  * Created by aaflalo on 14/09/16.
  */
 
-import TorrentApi from 'torrent-search-api'
+const TorrentSearchApi = require('torrent-search-api');
 
-const torrentApi = new TorrentApi();
-torrentApi.enableProvider('Rarbg');
-torrentApi.enableProvider('KickassTorrents');
+const torrentSearch = new TorrentSearchApi();
+torrentSearch.enableProvider('Rarbg');
+torrentSearch.enableProvider('KickassTorrents');
 
 module.exports = function (RED) {
 
@@ -24,7 +24,7 @@ module.exports = function (RED) {
                 category = msg.category;
             }
 
-            torrentApi.search(search, category).then(torrents => {
+            torrentSearch.search(search, category).then(torrents => {
                 msg.payload = torrents;
                 node.send(msg);
             }, error => {
