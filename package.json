@@ -14,7 +14,7 @@
   "license": "MIT",
   "homepage": "https://github.com/Belphemur/nodered-contrib-torrentapi",
   "dependencies": {
-    "torrentapi": "2.0.x"
+    "torrent-search-api": "1.0.x"
   },
   "node-red": {
     "nodes": {

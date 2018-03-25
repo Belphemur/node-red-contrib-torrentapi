@@ -2,7 +2,11 @@
  * Created by aaflalo on 14/09/16.
  */
 
-import TorrentApi from 'torrentapi'
+import TorrentApi from 'torrent-search-api'
+
+const torrentApi = new TorrentApi();
+torrentApi.enableProvider('Rarbg');
+torrentApi.enableProvider('KickassTorrents');
 
 module.exports = function (RED) {
 
@@ -10,26 +14,20 @@ module.exports = function (RED) {
         RED.nodes.createNode(this, config);
         const node = this;
         let search = this.search = config.search;
+        let category = this.category = config.category;
         this.on('input', function (msg) {
             if (msg.search) {
                 search = msg.search;
             }
-            const params = {
-                search_string: search,
-                sort: "seeders",
-                ranked: 0
-            };
+
             if (msg.category) {
-                params.category = msg.category;
-            }
-            if (msg.sort) {
-                params['sort'] = msg.sort;
+                category = msg.category;
             }
 
-            TorrentApi.search(params).then(function (result) {
-                msg.payload = result;
+            torrentApi.search(search, category).then(torrents => {
+                msg.payload = torrents;
                 node.send(msg);
-            }, function (error) {
+            }, error => {
                 node.error(error);
             });
         });

@@ -3,7 +3,8 @@
         category: 'function',
         color: '#a6bbcf',
         defaults: {
-            search: {value:""}
+            search: {value:""},
+            category: {value: 'All'}
         },
         inputs:1,
         outputs:1,
@@ -17,6 +18,12 @@
     <div class="form-row">
         <label for="node-input-search"><i class="icon-tag"></i> Search</label>
         <input type="text" id="node-input-search" placeholder="SouthPark">
+         <label for="node-input-category"><i class="icon-tag"></i> Category</label>
+        <select name='node-input-category' >
+            <option title='All' value='All'>All</option>
+            <option title='Movies' value='Movies'>Movies</option>
+            <option title='Shows' value='TV'>Shows</option>
+        </select>
     </div>
 </script>
 
