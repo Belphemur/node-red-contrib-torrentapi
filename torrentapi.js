@@ -2,21 +2,19 @@
  * Created by aaflalo on 14/09/16.
  */
 
+import TorrentApi from 'torrentapi'
 
 module.exports = function (RED) {
 
-    var TorrentApi = require('torrentapi');
-    var torrentImpl = new TorrentApi();
-
     function TorrentApiNode(config) {
         RED.nodes.createNode(this, config);
-        var node = this;
-        var search = this.search = config.search;
+        const node = this;
+        let search = this.search = config.search;
         this.on('input', function (msg) {
             if (msg.search) {
                 search = msg.search;
             }
-            var params = {
+            const params = {
                 search_string: search,
                 sort: "seeders",
                 ranked: 0
@@ -28,7 +26,7 @@ module.exports = function (RED) {
                 params['sort'] = msg.sort;
             }
 
-            torrentImpl.search(params).then(function (result) {
+            TorrentApi.search(params).then(function (result) {
                 msg.payload = result;
                 node.send(msg);
             }, function (error) {
