@@ -6,7 +6,7 @@
 module.exports = function (RED) {
 
     var TorrentApi = require('torrentapi');
-    var torrentImpl = new TorrentApi('Node-RED');
+    var torrentImpl = new TorrentApi();
 
     function TorrentApiNode(config) {
         RED.nodes.createNode(this, config);
