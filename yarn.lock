@@ -29,8 +29,13 @@ ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
-torrent-api-ts@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/torrent-api-ts/-/torrent-api-ts-1.0.7.tgz#5b6d577fa0d3c07ffc204fd35002145a3328f975"
+promise-throttle@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/promise-throttle/-/promise-throttle-1.0.0.tgz#6ab608b743b20f6db2c8f8050108ac9d33bbb25c"
+
+torrent-api-ts@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/torrent-api-ts/-/torrent-api-ts-1.0.8.tgz#b89c5fe4a3d113b9c962c2ba849a462f8545be45"
   dependencies:
     axios "^0.18.0"
+    promise-throttle "^1.0.0"
